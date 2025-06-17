@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA - Plataforma de Estudos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: url('megafundo (2).png') no-repeat center center fixed; 
+            background-size: cover;
+            min-height: 100vh; 
+            margin: 0;
+        }
+        .typing::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="relative">
+    
+    <header class="relative z-10 flex items-center justify-between px-8 py-4">
+        <img src="megafundo.png" alt="Logo" class="w-14 h-14 rounded-full border-2 border-green-500 shadow-lg">
+        <div class="absolute top-4 right-8 space-x-4">
+            <a href="equipe.html" class="px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-all">EQUIPE</a>
+        </div>
+        
+    </header>
+    
+    <main class="relative z-10 flex items-center justify-start min-h-screen px-16">
+        <div class="text-white max-w-xl p-6">
+            <h1 class="text-6xl font-extrabold text-green-400 drop-shadow-lg">MEGA</h1> 
+            <p id="animated-text" class="mt-4 text-lg font-extrabold text-gray-250 leading-relaxed typing"></p> 
+            <p id="animated-text-2" class="mt-4 text-lg font-extrabold text-gray-250 leading-relaxed"></p> 
+        </div>
+    </main>
+    
+    <script>
+        const text1 = "Criado com a intenção de conter conteúdos e cobrir assuntos que não estão presentes no currículo tradicional escolar, tendo como foco principal permitir a ampliação de aprendizado e preparar os estudantes do caic e torna-los mais qualificados para o mercado de trabalho.";
+        const text2 = "O Mega é uma plataforma de estudos onde apenas o estudante do Caic terá acesso!";
+        let i = 0;
+
+        function typeWriter(text, elementId, callback) {
+            if (i < text.length) {
+                document.getElementById(elementId).innerHTML += text.charAt(i);
+                i++;
+                setTimeout(() => typeWriter(text, elementId, callback), 50);
+            } else {
+                if (callback) callback();
+            }
+        }
+
+        window.onload = function() {
+            typeWriter(text1, "animated-text", function() {
+                setTimeout(() => {
+                    i = 0;
+                    typeWriter(text2, "animated-text-2");
+                }, 500);
+            });
+        }
+    </script>
+</body>
+</html>

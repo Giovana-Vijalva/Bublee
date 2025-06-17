@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Equipe - Bublee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('bubleefundo.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: brightness(0.4) blur(4px);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen flex flex-col text-white">
+
+  <header class="relative z-10 flex items-center justify-between px-8 py-4">
+    <img src="bublee.png" alt="Logo" class="w-14 h-14 rounded-full border-2 border-pink-500 shadow-lg" />
+    <nav class="space-x-4">
+      <a href="comunidade.html" class="px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all">COMUNIDADE</a>
+      <a href="Cadastro.html" class="px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all">CADASTRO</a>
+      <a href="projeto.html" class="px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all">PROJETO</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow flex flex-col p-8 relative z-10">
+    <div class="mb-6">
+      <h1 class="text-4xl font-extrabold text-pink-500 drop-shadow-lg text-left">EQUIPE</h1>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-center">
+
+      <div class="flex flex-col items-center text-justify">
+        <img src="gabiequipe.jpeg" alt="Pessoa 1"
+          class="w-40 h-40 rounded-full border-4 border-pink-800 shadow-lg object-cover object-top mb-4" />
+        <h2 class="text-xl font-bold">Gabriela Mücke Vijalva</h2>
+        <p class="text-pink-300 font-semibold mb-2">Criadora e Coordenadora de Cursos</p>
+        <p class="text-sm">Gabriela é a criadora do Projeto Bublee e atua como principal responsável pelo desenvolvimento da plataforma. Ela coordena especialmente a área de cursos, desde a curadoria de conteúdos até a criação de novas formações voltadas para a qualificação profissional dos usuários. Seu trabalho é essencial para garantir que o Bublee ofereça oportunidades de aprendizado acessíveis, práticas e alinhadas com as demandas do mercado atual.</p>
+      </div>
+
+      <div class="flex flex-col items-center text-justify">
+        <img src="isa1equipe.jpeg" alt="Pessoa 2"
+          class="w-40 h-40 rounded-full border-4 border-pink-800 shadow-lg object-cover mb-4"
+          style="object-position: center 30%;" />
+        <h2 class="text-xl font-bold">Isabely Cristiny Costa da Silva</h2>
+        <p class="text-pink-300 font-semibold mb-2">Gestora de Conteúdo e Feed</p>
+        <p class="text-sm">Informamos que a colaboradora Isabely é a profissional responsável, no âmbito do Projeto Bublee, pela gestão e atualização da página de feed bem como pela elaboração e desenvolvimento de cursos relacionados às diretrizes pedagógicas e formativas do projeto. Sua atuação é fundamental para garantir a qualidade e coerência dos conteúdos oferecidos, alinhando-os aos objetivos institucionais do Bublee e às demandas dos públicos atendidos.</p>
+      </div>
+
+      <div class="flex flex-col items-center text-justify">
+        <img src="gi2equipe.jpeg" alt="Pessoa 3"
+          class="w-40 h-40 rounded-full border-4 border-pink-800 shadow-lg object-cover mb-4"
+          style="object-position: center 20%;" />
+        <h2 class="text-xl font-bold">Giovana Mücke Vijalva</h2>
+        <p class="text-pink-300 font-semibold mb-2">Desenvolvedora do Site</p>
+        <p class="text-sm">Giovana é responsável pela atualização e desenvolvimento do site do Projeto Bublee, cuidando da manutenção dos conteúdos, da organização das informações e garantindo que a plataforma esteja sempre atualizada e funcional para todos os usuários. Seu trabalho contribui diretamente para a experiência de navegação e o acesso rápido aos cursos e recursos oferecidos pelo projeto.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 items-start justify-center">
+
+      <div class="flex flex-col items-center text-justify">
+        <img src="raissaequipe.jpeg" alt="Professora Raíssa"
+          class="w-40 h-40 rounded-full border-4 border-pink-800 shadow-lg object-cover mb-4"
+          style="object-position: center 58%;" />
+        <h2 class="text-xl font-bold">Profª Raíssa</h2>
+        <p class="text-pink-300 font-semibold mb-2">Consultora de Design e Visual</p>
+        <p class="text-sm">A professora Raíssa é responsável por auxiliar na parte visual do Projeto Bublee, contribuindo com orientações sobre design, identidade visual e apresentação dos conteúdos. Seu apoio garante que o projeto mantenha uma aparência atrativa, organizada e alinhada com os objetivos educacionais da plataforma.</p>
+      </div>
+
+      <div class="flex flex-col items-center text-justify">
+        <img src="enelise.jpeg" alt="Professora Enelise"
+          class="w-40 h-40 rounded-full border-4 border-pink-800 shadow-lg object-cover object-top mb-4" />
+        <h2 class="text-xl font-bold">Profª Enelise</h2>
+        <p class="text-pink-300 font-semibold mb-2">Elaboração de Cursos e Resenhas</p>
+        <p class="text-sm">A professora Enelise é responsável por auxiliar na criação dos cursos e na elaboração de resenhas no Projeto Bublee. Sua contribuição é fundamental para garantir a qualidade dos conteúdos educacionais, trazendo rigor acadêmico e clareza às formações oferecidas pela plataforma.</p>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

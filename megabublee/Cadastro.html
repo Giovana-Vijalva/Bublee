@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro/Login - Bublee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('bubleefundo.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen flex flex-col items-center justify-center p-8">
+
+  <div class="bg-white bg-opacity-90 p-8 rounded-2xl shadow-2xl w-full max-w-md text-center">
+    <div class="flex justify-around mb-6">
+      <button onclick="mostrarFormulario('cadastro')" id="btnCadastro" class="font-bold text-pink-500 border-b-2 border-pink-500">Cadastrar</button>
+      <button onclick="mostrarFormulario('login')" id="btnLogin" class="font-bold text-gray-500">Entrar</button>
+    </div>
+
+    <!-- Formulário de Cadastro -->
+    <div id="formCadastro">
+      <h1 class="text-4xl font-extrabold text-pink-500 drop-shadow-lg mb-4">Cadastro</h1>
+      <input id="nome" type="text" placeholder="Nome Completo" class="w-full p-3 mb-3 rounded-lg border border-gray-300 focus:outline-none" />
+      <input id="email" type="email" placeholder="E-mail" class="w-full p-3 mb-4 rounded-lg border border-gray-300 focus:outline-none" />
+      <button onclick="cadastrarUsuario()" class="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-lg font-bold">
+        Cadastrar
+      </button>
+    </div>
+
+    <!-- Formulário de Login -->
+    <div id="formLogin" style="display: none;">
+      <h1 class="text-4xl font-extrabold text-pink-500 drop-shadow-lg mb-4">Entrar</h1>
+      <input id="loginEmail" type="email" placeholder="E-mail cadastrado" class="w-full p-3 mb-4 rounded-lg border border-gray-300 focus:outline-none" />
+      <button onclick="entrarUsuario()" class="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-lg font-bold">
+        Entrar
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function mostrarFormulario(tipo) {
+      const cadastro = document.getElementById('formCadastro');
+      const login = document.getElementById('formLogin');
+      const btnCadastro = document.getElementById('btnCadastro');
+      const btnLogin = document.getElementById('btnLogin');
+
+      if (tipo === 'cadastro') {
+        cadastro.style.display = 'block';
+        login.style.display = 'none';
+        btnCadastro.classList.add('text-pink-500', 'border-pink-500');
+        btnLogin.classList.remove('text-pink-500', 'border-pink-500');
+        btnLogin.classList.add('text-gray-500');
+      } else {
+        cadastro.style.display = 'none';
+        login.style.display = 'block';
+        btnLogin.classList.add('text-pink-500', 'border-pink-500');
+        btnCadastro.classList.remove('text-pink-500', 'border-pink-500');
+        btnCadastro.classList.add('text-gray-500');
+      }
+    }
+
+    function cadastrarUsuario() {
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (nome === "" || email === "") {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      localStorage.setItem('usuario', JSON.stringify({ nome, email }));
+      alert("Cadastro realizado com sucesso!");
+      window.location.href = "comunidade.html";
+    }
+
+    function entrarUsuario() {
+      const emailLogin = document.getElementById('loginEmail').value.trim();
+      const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+      if (!usuario || usuario.email !== emailLogin) {
+        alert("Usuário não encontrado. Verifique o e-mail ou cadastre-se.");
+        return;
+      }
+
+      alert("Login bem-sucedido!");
+      window.location.href = "comunidade.html";
+    }
+  </script>
+</body>
+</html>
